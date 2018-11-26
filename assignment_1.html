@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <style>
+            form {
+                     text-align: center;
+                  }
+             body{
+                     background-color: burlywood;
+                 }
+        </style>
+        <title>DigitalLync</title>
+           <h1 style="text-align: center">Registration Form</h1>
+     </head>
+     <body>
+          <form id="myForm">
+               Username:<input type="text" id="username">  <br><br>
+               password:<input type="password" id="password"> <br><br>
+               emailid:<input type="text" id="emailid"> <br><br>
+               city: <select id="city">
+                         <option value="Hyderabad">Hyderabad</option>
+                         <option value="Secunderabad">Secunderabad</option>
+                         <option value="Banglore">Banglore</option>
+                         <option value="Chennai">Chennai</option>
+                    </select> <br><br>
+
+               Something about yourself:<textarea id="say"></textarea><br><br>
+                   <input type="radio" value="Male" name="gender"> Male
+                   <input type="radio" value="Female" name="gender"> Female
+                   <input type="radio"  value="Others" name="gender"> others
+                    <br><br>
+                   <input type="checkbox" id="tandc"> I agree to terms and conditions. <br><br>
+                   <input type="submit" onclick="register()" value="Register Me">
+                   <input type="button" onclick="resetform()" value="Reset form">
+          </form>
+
+          <div class="container">
+               <div class="tab tab-1">
+               <table id="table" border="1">
+               <tr>
+                    <th>username</th>
+                    <th>password</th>
+                    <th>emailid</th>
+                    <th>city</th>
+                    <th>gender</th>
+               </tr>
+               </table>
+          </div>
+
+          <div>
+                    <p id="demo"></p>
+          </div>
+          <script>
+               var objects = {};
+               var objIndex = 0;
+               var objArray = new Array();
+
+               function register() {
+			     event.preventDefault();
+                    
+			     var username=document.getElementById("username");
+				var password=document.getElementById("password");
+                    var emailid=document.getElementById("emailid");
+                    var city=document.getElementById("city");
+                    var gender=document.getElementsByName("gender");
+                    //var say=document.getElementById("say");
+                    //var tandc=document.getElementById("tandc");
+
+                    var rowCount = table.rows.length;
+                    var row = table.insertRow(rowCount);
+
+                    row.insertCell(0).innerHTML= username.value;
+                    row.insertCell(1).innerHTML= password.value;
+                    row.insertCell(2).innerHTML= emailid.value;
+                    row.insertCell(3).innerHTML= city.value;
+                    var i = 0;
+                    if (gender[1].checked == true) {
+                         i = 1; 
+                    } else if (gender[2].checked == true) {
+                         i = 2;
+                    }
+                    row.insertCell(4).innerHTML= gender[i].value;
+
+                    objects[objIndex] = {username:username.value, password:password.value, emailid:emailid.value, city:city.value, gender:gender[i].value}
+                    objArray.push (objects[objIndex]);
+                    document.getElementById("demo").innerHTML = objArray.findIndex[objIndex];
+                    objIndex++;
+
+               } 
+
+               function resetform () {
+                    document.getElementById("myForm").reset();
+               }
+
+          </script>
+     </body>
+</html>
+
+
+
+
+
+
+                                            
+                          
+
+
