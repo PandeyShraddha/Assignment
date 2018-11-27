@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+     <head>
+	
+        <style>
+            form {
+                     text-align: center;
+                  }
+             body{
+                     background-color: burlywood;
+                 }
+        </style>
+        
+          <title>DigitalLync</title>
+		
+         
+         <h1 style="text-align: center">Registration Form</h1>
+            
+     </head>
+
+     <body>
+             <form>
+			 
+               
+                Username:<input type="text" id="username">  <br><br>
+                password:<input type="password" id="password"> <br><br>
+                emailid:<input type="text" id="emailid"> <br><br>
+                 city: <select id="city">
+                              <option value="Hyderabad">Hyderabad</option>
+                              <option value="Secunderabad">Secunderabad</option>
+                              <option value="Banglore">Banglore</option>
+                              <option value="Chennai">Chennai</option>
+                       </select> <br><br>
+
+                  Something about yourself:<textarea id="say"></textarea><br><br>
+                   <input type="radio" value="Male" name="gender"> Male
+                   <input type="radio" value="Female" name="gender"> Female
+                   <input type="radio"  value="Others" name="gender"> others
+                    <br><br>
+                   <input type="checkbox" id="tandc"> I agree to terms and conditions. <br><br>
+                   <input type="submit" onclick="register()" value="Register Me">
+              </form>
+              
+                 <div>
+                   
+                        <p id="d_username"></p>
+                        <p id="d_password"></p>
+                        <p id="d_emailid"></p>
+                        <p id="d_city"></p>
+                        <p id="d_say"></p>
+                        <p id="d_tandc"></p>
+                       
+
+                 </div>
+                <script>
+                           function register(){
+						    event.preventDefault();
+                             
+							 var username=document.getElementById("username");
+                             console.log(username.value);
+                             //username.value="";
+                             document.getElementById('d_username').innerHTML=username.value;
+						   
+						    
+							 var password=document.getElementById("password");
+                             console.log(password.value);
+                             //password.value="";
+                            document.getElementById('d_password').innerHTML=password.value;
+						   						  
+                            var emailid=document.getElementById("emailid");
+                            console.log(emailid.value);
+                            //emailid.value="";
+                            document.getElementById('d_emailid').innerHTML=emailid.value;
+
+                            var city=document.getElementById("city");
+                            console.log(city.value);
+                            //emailid.value="";
+                           document.getElementById('d_city').innerHTML=city.value;
+
+                           var say=document.getElementById("say");
+                            console.log(say.value);
+                            //emailid.value="";
+                           document.getElementById('d_say').innerHTML=say.value;
+
+                           var tandc=document.getElementById("tandc");
+                            console.log(tandc.value);
+                            //emailid.value="";
+                           document.getElementById('d_tandc').innerHTML=tandc.value;
+
+
+                           } 
+
+    
+						   
+                 </script>
+           
+     </body>
+
+</html>
+
+
+
+
+
+
+                                            
+                          
+
+
