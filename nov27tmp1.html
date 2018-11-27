@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <style>
+            form {
+                     text-align: center;
+                  }
+             body{
+                     background-color: burlywood;
+                 }
+        </style>
+        
+          <title>DigitalLync</title>
+         <h1 style="text-align: center">Registration Form</h1>
+     </head>
+
+     <body>
+             <form>
+                Product:<input type="text" id="Product"> <br><br>
+                URL:<input type="text" id="URL"> <br><br>
+                Something about product:<textarea id="say"></textarea><br><br>
+                <input type="submit" onclick="fetch()" value="Fetch product">
+              </form>
+
+              <script type="text/javascript">
+               function fetch() {
+                    var Product = document.getElementById('Product').value;
+                    var URL = document.getElementById('URL').value;
+                    var say = document.getElementById('say').value;
+
+                    src = 'file:///' + URL + Product + '_' + say +'.jpg';
+                    console.log (src);
+                    img = document.createElement('img');
+                    img.src = src;
+                    document.body.appendChild(img);
+                }
+            </script>    
+     </body>
+</html>
+                                        
+                          
+
+
