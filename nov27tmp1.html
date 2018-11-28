@@ -13,7 +13,6 @@
           <title>DigitalLync</title>
          <h1 style="text-align: center">Registration Form</h1>
      </head>
-
      <body>
              <form>
                 Product:<input type="text" id="Product"> <br><br>
@@ -21,18 +20,19 @@
                 Something about product:<textarea id="say"></textarea><br><br>
                 <input type="submit" onclick="fetch()" value="Fetch product">
               </form>
-
+              <div id="imageDiv"></div>
+ 
               <script type="text/javascript">
                function fetch() {
                     var Product = document.getElementById('Product').value;
                     var URL = document.getElementById('URL').value;
                     var say = document.getElementById('say').value;
+                    var img = document.createElement("IMG");
 
-                    src = 'file:///' + URL + Product + '_' + say +'.jpg';
+                    console.log(path, URL, say);
+                    img.src = 'file:///' + URL +  Product + '_' + say +'.jpg';
                     console.log (src);
-                    img = document.createElement('img');
-                    img.src = src;
-                    document.body.appendChild(img);
+                    document.getElementById('imageDiv').appendChild(img);
                 }
             </script>    
      </body>
