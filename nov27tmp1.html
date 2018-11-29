@@ -6,8 +6,27 @@
                      text-align: center;
                   }
              body{
-                     background-color: burlywood;
+                     background-color: yellow;
+                    
                  }
+img{ 
+    width: 200px ;
+height: 200px;
+}
+                 .grid-container {
+  display: grid;
+  grid-gap: 50px 100px;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
         </style>
         
           <title>DigitalLync</title>
@@ -20,20 +39,28 @@
                 Something about product:<textarea id="say"></textarea><br><br>
                 <input type="submit" onclick="fetch()" value="Fetch product">
               </form>
-              <div id="imageDiv"></div>
+              <div>
+                <p id="d_product"></p>
+                <p id="imageDiv"></p>
+                <p id="d_say"></p>
+              </div>
  
               <script type="text/javascript">
                function fetch() {
-                    var Product = document.getElementById('Product').value;
-                    var URL = document.getElementById('URL').value;
-                    var say = document.getElementById('say').value;
-                    var img = document.createElement("IMG");
+                    event.preventDefault();
+                    var Product = document.getElementById('Product');
+                    var URL = document.getElementById('URL');
+                    var say = document.getElementById('say');
+                    var img = document.createElement("img");
 
-                    console.log(path, URL, say);
-                    img.src = 'file:///' + URL +  Product + '_' + say +'.jpg';
-                    console.log (src);
-                    document.getElementById('imageDiv').appendChild(img);
-                }
+                   // img.src = 'file:///' + URL +  Product + '_' + say +'.jpg';
+                   img.src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png";
+                   document.getElementById('d_product').innerHTML=Product.value;
+                   document.getElementById('imageDiv').appendChild(img);
+                   document.getElementById('d_say').innerHTML=say.value;
+   
+}
+                
             </script>    
      </body>
 </html>
