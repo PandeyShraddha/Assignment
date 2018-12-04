@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Registration form</title>
+     <link rel = "stylesheet" href="loginform.css">
+  </head>
+  
+  <input type='checkbox' id='form-switch'>
+    <form id='login-form' action="" method='post'>
+      <input type="text" id="login_username" placeholder="Username" required>
+      <input type="password" id="login_password" placeholder="Password" required>
+      <button type='submit' onclick="login()"" >Login</button>
+      <label for='form-switch'><span>Register</span></label>
+    </form>
+
+    <form id='register-form' action="" method='post'>
+      <input type="text" id="register_username" placeholder="Username" required>
+      <input type="email" id="register_email" placeholder="Email" required>
+      <input type="password" id="register_password" placeholder="Password" required>
+      <input type="password" id="register_repassword" placeholder="Re Password" required>
+      <button type='submit' onclick="register()" >Register</button>
+      <label for='form-switch'>Already Member ? Sign In Now..</label>
+    </form>
+    
+    <script>
+      function register() {
+        event.preventDefault();
+        var username_entry = document.getElementById("register_username").value; 
+        var password_entry = document.getElementById("register_password").value; 
+		
+		    console.log(localStorage.getItem(username_entry));
+		    console.log(username_entry);
+        if (localStorage.getItem(username_entry) === null) {
+            localStorage.setItem(username_entry, password_entry);
+        }
+		  }
+      
+      function login () {
+        event.preventDefault();
+        var username_val = document.getElementById("login_username").value; 
+        var password_val = document.getElementById("login_password").value;
+
+		alert(localStorage.getItem(username_val));
+        if (localStorage.getItem(username_val) === password_val) {
+            alert ("congrats : Login successful");
+        }  else {
+            alert ("%% Login Failed");
+        }   
+
+      }
+    </script>
+</html>
